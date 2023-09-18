@@ -20,19 +20,19 @@
     </dependency>
   </dependencies>
   <distributionManagement>
-    <repository>
+    <snapshotRepository>
       <uniqueVersion>false</uniqueVersion>
       <id>dhl-snapshots</id>
       <name>dhl-snapshots</name>
       <url>http://18.224.8.235:8081/repository/dhl-snapshots/</url>
       <layout>default</layout>
-    </repository>
-    <snapshotRepository>
+    </snapshotRepository>
+    <repository>
       <uniqueVersion>true</uniqueVersion>
       <id>dhl-releases</id>
       <name>dhl-releases</name>
       <url>http://18.224.8.235:8081/repository/dhl-releases/</url>
       <layout>legacy</layout>
-    </snapshotRepository>
+    </repository>
   </distributionManagement>
 </project>

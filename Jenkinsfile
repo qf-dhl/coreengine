@@ -24,7 +24,9 @@ pipeline {
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
-                sh "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=testorggfcfg_coreengine  -Dsonar.host.url=https://sonarcloud.io/  -Dsonar.login=61d8f31ccf215c7997e6ae265727ca5f9754cd44"
+                withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: 'SONAR_TOKEN')]) {
+                  sh "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=testorggfcfg_coreengine  -Dsonar.host.url=https://sonarcloud.io/  -Dsonar.login=${SONAR_TOKEN}"
+                }
             }
 
             post {
